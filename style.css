@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hero {
+  height: 100vh;
+background-image: url(imgs/Screenshot\ 2025-12-18\ 182324.png);
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+  color: white;
+  padding:15px 80px 40px 80px;
+  position: relative;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+background-image: url(imgs/logo.png);
+width: 157px;
+height: 55px;
+
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* NAV HOVER */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: #DBEAFE;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #DBEAFE;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* CONTENT */
+.content {
+  max-width: 640px;
+  margin-top: 140px;
+}
+
+/* ANIMATION BASE */
+.animate {
+  opacity: 0;
+  transform: translateX(-120%);
+  transition: all 0.8s ease;
+}
+
+.hero.active .animate:nth-child(1) {
+  transition-delay: 0.2s;
+}
+.hero.active .animate:nth-child(2) {
+  transition-delay: 0.4s;
+}
+.hero.active .animate:nth-child(3) {
+  transition-delay: 0.6s;
+}
+
+.hero.active .animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+h1 {
+color: #FFF;
+font-family: "Poppins";
+font-size: 50px;
+font-style: normal;
+font-weight: 600;
+line-height: 160%; 
+  margin-bottom: 20px;
+}
+
+p {
+color: rgba(255, 255, 255, 0.95);
+font-family: "Arimo";
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 160%; /* 40px */
+  margin-bottom: 30px;
+}
+
+/* BUTTONS */
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  padding: 12px 26px;
+  border-radius: 10px;
+font-family: "Poppins";
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* BUTTON HOVER */
+.primary {
+  background: white;
+  border: none;
+color: #101828;
+
+}
+
+.primary:hover {
+  background: #1F3C88;
+  color: rgb(255, 255, 255);
+  transform: translateY(-3px);
+}
+
+.secondary {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.secondary:hover {
+  background: white;
+  color: black;
+  transform: translateY(-3px);
+}
