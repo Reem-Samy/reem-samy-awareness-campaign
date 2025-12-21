@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #FEF2F2;
 }
 
 .hero {
@@ -156,4 +157,75 @@ color: #101828;
   background: white;
   color: black;
   transform: translateY(-3px);
+}
+
+/* section */
+.activity-section {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+    padding: 0 0 0 130px;
+  overflow: hidden;
+}
+
+/* النص */
+.contentt {
+  margin-top: 60px;
+  width: 50%;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.8s ease;
+}
+
+.contentt h2 {
+    color: #101828;
+font-family: "Poppins";
+font-size: 35px;
+font-weight: 400;
+line-height: 160%; /* 56px */
+  margin-bottom: 20px;
+}
+
+.contentt p {
+  margin-bottom: 15px;
+color: #364153;
+font-family: "Arimo";
+font-size: 22px;
+font-weight: 400;
+line-height: 160%;
+}
+
+/* الصورة */
+.image-wrapper {
+  width: 50%;
+  height: 843px;
+  position: relative;
+  overflow: visible;
+}
+
+.image-wrapper img {
+  position: absolute;
+  width: 591px;
+  height: 843px;
+  top: -156px;
+  transform: translateY(0);
+  transition: all 0.8s ease;
+  opacity: 0;
+}
+
+.image-wrapper:hover img {
+  transform: translateY(-100px);
+  opacity: 1;
+}
+
+
+/* عند التفعيل */
+.activity-section.active .contentt {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.activity-section.active .image-wrapper img {
+  opacity: 1;
+  transform: translateY(150px);
 }
