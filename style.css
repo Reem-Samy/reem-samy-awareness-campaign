@@ -506,3 +506,64 @@ line-height: 20px;}
 .evidence-section.show .blue-box {
   opacity: 1;
 }
+
+/* section5 */
+
+.sports-section {
+  padding: 60px 40px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.sports-section h2 {
+color: #2C2C2C;
+text-align: center;
+font-family: "Poppins";
+font-size: 35px;
+font-style: normal;
+font-weight: 400;
+line-height: 160%;
+  margin-bottom: 10px;
+}
+
+.sports-section p {
+  max-width: 800px;
+  margin: 0 auto 40px;
+color: #4A5565;
+text-align: center;
+font-family: "Arimo";
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 160%; /* 32px */
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  width: calc(300px * 6);
+  animation: scroll 20s linear infinite;
+}
+
+.slider-track img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin: 0 15px;
+}
+
+/* Animation من اليمين للشمال */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
