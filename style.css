@@ -5,6 +5,9 @@
   color: #FEF2F2;
 }
 
+body{
+  background: #FEF2F2;
+}
 .hero {
   height: 100vh;
 background-image: url(imgs/Screenshot\ 2025-12-18\ 182324.png);
@@ -23,6 +26,7 @@ background-repeat: no-repeat;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
 }
 
 .logo {
@@ -161,11 +165,13 @@ color: #101828;
 
 /* section */
 .activity-section {
+  background: #FEF2F2;
   position: relative;
   display: flex;
   align-items: flex-start;
     padding: 0 0 0 130px;
   overflow: hidden;
+  margin-bottom: 100px;
 }
 
 /* النص */
@@ -317,20 +323,32 @@ line-height: 24px;
 .icon {
   width: 48px;
   height: 48px;
-  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 18px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
 }
 
 .icon img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
+width: 56px;
+height: 56px;
 }
 
 
-.card:hover .icon {
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+.card.physical:hover .icon {
+box-shadow: 0 0 20px 0 #E7000B;
+}
+
+.card.mental:hover .icon {
+box-shadow: 0 0 20px 0 #155DFC;
+}
+
+.card.energy:hover .icon {
+box-shadow: 0 0 20px 0 #D08700;}
+
+
+.card.disease:hover .icon {
+box-shadow: 0 0 20px 0 #00A63E;
 }
