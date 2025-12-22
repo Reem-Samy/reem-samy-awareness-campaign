@@ -361,30 +361,26 @@ box-shadow: 0 0 20px 0 #00A63E;
   text-align: center;
 }
 
-/* TITLE */
-
-.evidence-title{
+.evidence-title {
   color: #2C2C2C;
-font-family: "Poppins";
-font-size: 35px;
-font-style: normal;
-font-weight: 400;
-line-height: 160%; 
+  font-family: "Poppins", sans-serif;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 160%;
+  transform: translateY(-40px);
+  opacity: 0;
+  transition: 0.8s ease;
 }
 
-.evidence-subtitle{
-  width: 807px;
-  margin-left: 250px;
-color: #4A5565;
-text-align: center;
-font-family: "Arimo";
-font-size: 20px;
-font-style: normal;
-font-weight: 400;
-line-height: 160%;
-}
-.evidence-title,
 .evidence-subtitle {
+  width: 807px;
+  margin: 20px auto 60px;
+  color: #4A5565;
+  text-align: center;
+  font-family: "Arimo", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 160%;
   transform: translateY(-40px);
   opacity: 0;
   transition: 0.8s ease;
@@ -396,18 +392,19 @@ line-height: 160%;
   opacity: 1;
 }
 
-/* STATS */
 .stats {
   display: flex;
   justify-content: space-between;
-  margin: 60px 0;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 60px;
 }
 
 .stat {
   width: 220px;
   transform: translateX(-80px);
   opacity: 0;
-  transition: 0.8s ease;
+  transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
 .evidence-section.show .stat {
@@ -415,36 +412,97 @@ line-height: 160%;
   opacity: 1;
 }
 
-/* ICON */
 .stat-icon {
-  width: 56px;
-  height: 56px;
+width: 64px;
+height: 64px;
   border-radius: 50%;
   background: #e6f0ff;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: auto;
-  font-size: 22px;
+  margin: 0 auto 16px;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-/* HOVER */
-.stat:hover .stat-icon {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25);
-  transform: scale(1.1);
+.stat-icon img {
+width: 64px;
+height: 64px;
+  object-fit: contain;
 }
 
-/* BLUE BOX */
+.stat:hover .stat-icon {
+  box-shadow: 0 14px 28px rgba(21, 93, 252, 0.35);
+  transform: scale(1.08);
+}
+
+/* الرقم + suffix */
+.stat-value {
+font-family: "Arimo";
+  font-weight: 400;
+  font-size: 36px;
+color: #101828;
+  margin-bottom: 8px;
+}
+
+/* العنوان */
+.stat-title {
+  font-family: "Arimo";
+font-size: 20px;
+  color: #101828;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+/* الوصف */
+.stat-subtitle {
+  font-family: "Arimo";
+  font-size: 14px;
+  font-weight: 400;
+color: #4A5565;  
+line-height: 1.6;
+  max-width: 250px;
+  margin: auto;
+  text-align: center;
+}
+
 .blue-box {
-  background: #e6f0ff;
+background: #DBEAFE;
   padding: 40px;
   opacity: 0;
   transition: 0.8s ease;
 }
 
+.blue-box p strong{
+color: #101828;
+text-align: center;
+font-family: "Arimo";
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 160%; /* 32px */
+}
+
+.blue-box p{
+color: #101828;
+text-align: center;
+font-family: "Arimo";
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 160%; /* 32px */
+}
+
+.blue-box h6{
+  color: #4A5565;
+text-align: center;
+font-family: "Arimo";
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px;}
+
+
+
 .evidence-section.show .blue-box {
   opacity: 1;
 }
-
-

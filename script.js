@@ -79,35 +79,34 @@ benefitsSection.addEventListener("mouseenter", () => {
 });
 
 
-// section4
 const statsData = [
   {
-    icon: "📈",
+    icon: "imgs/risk.png",
     value: 50,
     suffix: "%",
     title: "Reduced Risk",
-    subtitle: "Lower risk of cardiovascular disease"
+    subtitle: "Lower risk of cardiovascular disease with regular activity"
   },
   {
-    icon: "👥",
+    icon: "imgs/adults.png",
     value: 80,
     suffix: "%",
     title: "Adults Inactive",
-    subtitle: "Do not meet minimum activity guidelines"
+    subtitle: "Of adults worldwide don't meet minimum activity guidelines"
   },
   {
-    icon: "⏱",
+    icon: "imgs/min.png",
     value: 150,
     suffix: "min",
     title: "Weekly Goal",
-    subtitle: "Moderate-intensity exercise"
+    subtitle: "Recommended moderate-intensity exercise per week"
   },
   {
-    icon: "🏅",
+    icon: "imgs/mood.png",
     value: 30,
     suffix: "%",
     title: "Better Mood",
-    subtitle: "Mental health improvement"
+    subtitle: "Improvement in mental health symptoms with exercise"
   }
 ];
 
@@ -116,22 +115,28 @@ const section = document.getElementById("evidence");
 let animated = false;
 
 /* CREATE STATS */
-statsData.forEach(stat => {
+statsData.forEach((stat, index) => {
   const div = document.createElement("div");
   div.className = "stat";
+  div.style.transitionDelay = `${index * 0.15}s`;
 
   div.innerHTML = `
-    <div class="stat-icon">${stat.icon}</div>
-    <h3><span class="number">0</span>${stat.suffix}</h3>
-    <h4>${stat.title}</h4>
-    <p>${stat.subtitle}</p>
+    <div class="stat-icon">
+      <img src="${stat.icon}" alt="${stat.title}">
+    </div>
+
+    <div class="stat-value" data-target="${stat.value}">
+      0${stat.suffix}
+    </div>
+
+    <h4 class="stat-title">${stat.title}</h4>
+    <p class="stat-subtitle">${stat.subtitle}</p>
   `;
 
-  div.dataset.value = stat.value;
   statsContainer.appendChild(div);
 });
 
-/* ANIMATION TRIGGER */
+/* TRIGGER ANIMATION */
 section.addEventListener("mouseenter", () => {
   if (animated) return;
   animated = true;
@@ -140,20 +145,22 @@ section.addEventListener("mouseenter", () => {
   startCounters();
 });
 
-/* COUNTER */
+/* COUNTER FUNCTION */
 function startCounters() {
-  document.querySelectorAll(".stat").forEach(stat => {
-    const target = +stat.dataset.value;
-    const numberEl = stat.querySelector(".number");
+  document.querySelectorAll(".stat-value").forEach(el => {
+    const target = +el.dataset.target;
+    const suffix = el.textContent.replace(/\d/g, "");
     let count = 0;
 
     const interval = setInterval(() => {
       count++;
-      numberEl.textContent = count;
-      if (count >= target) clearInterval(interval);
+      el.textContent = `${count}${suffix}`;
+
+      if (count >= target) {
+        el.textContent = `${target}${suffix}`;
+        clearInterval(interval);
+      }
     }, 15);
   });
 }
-
-
 
