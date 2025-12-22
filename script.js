@@ -164,3 +164,37 @@ function startCounters() {
   });
 }
 
+
+const journeyFeaturesData = [
+  {
+    title: "Make It Social",
+    description:
+      "Exercise with friends, join classes, or participate in community events to stay motivated"
+  },
+  {
+    title: "Track Your Progress",
+    description:
+      "Monitor improvements in energy, mood, and physical abilities to see your growth"
+  },
+  {
+    title: "Celebrate Consistency",
+    description:
+      "Focus on building sustainable habits rather than pursuing perfection"
+  }
+];
+
+const journeyFeaturesContainer = document.getElementById("journey-features");
+
+journeyFeaturesData.forEach(feature => {
+  const div = document.createElement("div");
+  div.className = "journey-feature";
+
+  div.innerHTML = `
+    <h3>${feature.title}</h3>
+    <p>${feature.description}</p>
+  `;
+
+  journeyFeaturesContainer.appendChild(div);
+});
+
+

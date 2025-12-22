@@ -7,6 +7,7 @@
 
 body{
   background: #FEF2F2;
+  overflow-x: hidden;
 }
 .hero {
   height: 100vh;
@@ -568,4 +569,89 @@ line-height: 160%; /* 32px */
   }
 }
 
-section
+.journey {
+  min-height: 100vh;
+background: #1F3C88;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.journey-content {
+  max-width: 900px;
+}
+
+.journey-title {
+text-align: center;
+font-family: "Arimo";
+font-size: 38px;
+font-style: normal;
+font-weight: 400;
+line-height: 160%; 
+  margin-bottom: 20px;
+}
+
+.journey-text {
+color: #DBEAFE;
+text-align: center;
+font-family: "Arimo";
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 160%; /* 28.8px */
+  margin-bottom: 30px;
+}
+
+.journey-btn {
+  background-color: #ffffff;
+color: #1447E6;
+font-family: "Arimo";
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.10), 0 4px 6px -4px rgba(0, 0, 0, 0.10);
+  border: none;
+  padding: 16px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-bottom: 50px;
+  transition: 0.3s;
+}
+
+.journey-btn span {
+  color: #1447E6;
+
+  margin-left: 5px;
+}
+
+.journey-btn:hover {
+  transform: translateY(-2px);
+}
+
+.journey-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.journey-feature h3 {
+color: #FFF;
+text-align: center;
+font-family: "Arimo";
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 133.333% */
+  margin-bottom: 10px;
+}
+
+.journey-feature p {
+color: #DBEAFE;
+text-align: center;
+font-family: "Arimo";
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 160%;
+}
