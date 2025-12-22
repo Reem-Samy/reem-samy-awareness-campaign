@@ -79,3 +79,81 @@ benefitsSection.addEventListener("mouseenter", () => {
 });
 
 
+// section4
+const statsData = [
+  {
+    icon: "📈",
+    value: 50,
+    suffix: "%",
+    title: "Reduced Risk",
+    subtitle: "Lower risk of cardiovascular disease"
+  },
+  {
+    icon: "👥",
+    value: 80,
+    suffix: "%",
+    title: "Adults Inactive",
+    subtitle: "Do not meet minimum activity guidelines"
+  },
+  {
+    icon: "⏱",
+    value: 150,
+    suffix: "min",
+    title: "Weekly Goal",
+    subtitle: "Moderate-intensity exercise"
+  },
+  {
+    icon: "🏅",
+    value: 30,
+    suffix: "%",
+    title: "Better Mood",
+    subtitle: "Mental health improvement"
+  }
+];
+
+const statsContainer = document.getElementById("statsContainer");
+const section = document.getElementById("evidence");
+let animated = false;
+
+/* CREATE STATS */
+statsData.forEach(stat => {
+  const div = document.createElement("div");
+  div.className = "stat";
+
+  div.innerHTML = `
+    <div class="stat-icon">${stat.icon}</div>
+    <h3><span class="number">0</span>${stat.suffix}</h3>
+    <h4>${stat.title}</h4>
+    <p>${stat.subtitle}</p>
+  `;
+
+  div.dataset.value = stat.value;
+  statsContainer.appendChild(div);
+});
+
+/* ANIMATION TRIGGER */
+section.addEventListener("mouseenter", () => {
+  if (animated) return;
+  animated = true;
+
+  section.classList.add("show");
+  startCounters();
+});
+
+/* COUNTER */
+function startCounters() {
+  document.querySelectorAll(".stat").forEach(stat => {
+    const target = +stat.dataset.value;
+    const numberEl = stat.querySelector(".number");
+    let count = 0;
+
+    const interval = setInterval(() => {
+      count++;
+      numberEl.textContent = count;
+      if (count >= target) clearInterval(interval);
+    }, 15);
+  });
+}
+
+
+
