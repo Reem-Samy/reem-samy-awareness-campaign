@@ -51,6 +51,7 @@ body {
 /* Section */
 .contact-section {
   padding: var(--section-padding);
+  height: 100vh;
 }
 
 .contact-container {
