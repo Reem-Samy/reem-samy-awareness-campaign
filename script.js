@@ -1,3 +1,6 @@
+
+
+
 // HERO SECTION
 const hero = document.getElementById("hero");
 
