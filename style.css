@@ -113,6 +113,22 @@ body {
   width: 100%;
 }
 
+.login-btn {
+  padding: 10px 22px;
+  background: var(--accent-hover);
+  color: var(--color-white);
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background var(--transition-fast);
+}
+
+.login-btn:hover {
+  background: var(--accent-blue);
+}
+
 .content {
   max-width: 640px;
   margin-top: 140px;

@@ -1,6 +1,6 @@
 :root {
   /* Fonts */
-  --font-primary: "Arial", sans-serif;
+  --font-primary: "Poppins";
   --font-secondary: "Arimo", sans-serif;
   --font-heading: "Poppins", sans-serif;
 
@@ -9,6 +9,7 @@
   --color-dark: #101828;
   --color-gray: #4A5565;
   --color-border: #dddddd;
+    --accent-blue: #DBEAFE;
   --color-primary: #1f5cff;
   --color-primary-hover: #1848cc;
   --color-success: green;
@@ -28,12 +29,16 @@
   --section-padding: 80px 10%;
   --gap-lg: 80px;
   --gap-md: 40px;
+    --spacing-md: 30px;
   --gap-sm: 24px;
 
   /* Sizes */
   --icon-size: 96px;
   --radius-sm: 12px;
   --radius-md: 14px;
+
+  /* transition */
+    --transition-fast: 0.3s ease;
 }
 
 /* Reset */
@@ -47,6 +52,74 @@
 body {
   background: var(--color-white);
 }
+
+.navbar {
+  background-color: var(--color-gray);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 60px;
+}
+
+
+.logo {
+  background-image: url(imgs/logo.png);
+  width: 157px;
+  height: 55px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-white);
+  font-family: var(--font-primary);
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: var(--accent-blue);
+  transition: width var(--transition-fast);
+}
+
+.nav-links a:hover {
+  color: var(--accent-blue);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.login-btn {
+  padding: 10px 22px;
+  background: var(--color-primary-hover);
+  color: var(--color-white);
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background var(--color-primary-hover);
+  transition: all 0.3s ease-in-out;
+}
+
+.login-btn:hover {
+  background: var(--accent-blue);
+}
+
 
 /* Section */
 .contact-section {
