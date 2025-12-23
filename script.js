@@ -1,7 +1,3 @@
-
-
-
-// HERO SECTION
 const hero = document.getElementById("hero");
 
 hero.addEventListener("mouseenter", () => {
@@ -9,7 +5,6 @@ hero.addEventListener("mouseenter", () => {
 });
 
 
-// ACTIVITY SECTION
 const activitySection = document.getElementById("activitySection");
 
 activitySection.addEventListener("mouseenter", () => {
@@ -17,7 +12,6 @@ activitySection.addEventListener("mouseenter", () => {
 });
 
 
-// BENEFITS CARDS DATA
 const cardsData = [
   {
     icon: "imgs/card1.png",
@@ -51,11 +45,9 @@ const cardsData = [
 
 
 
-// BENEFITS SECTION
 const cardsContainer = document.getElementById("cardsContainer");
 const benefitsSection = document.getElementById("benefits");
 
-// CREATE CARDS
 cardsData.forEach((card, index) => {
   const div = document.createElement("div");
 div.className = `card ${card.cardClass}`;
@@ -74,7 +66,6 @@ div.innerHTML = `
 });
 
 
-// ANIMATION ON MOUSE ENTER
 benefitsSection.addEventListener("mouseenter", () => {
   document.querySelectorAll(".card").forEach(card => {
     card.classList.add("show");
@@ -117,7 +108,6 @@ const statsContainer = document.getElementById("statsContainer");
 const section = document.getElementById("evidence");
 let animated = false;
 
-/* CREATE STATS */
 statsData.forEach((stat, index) => {
   const div = document.createElement("div");
   div.className = "stat";
@@ -139,7 +129,6 @@ statsData.forEach((stat, index) => {
   statsContainer.appendChild(div);
 });
 
-/* TRIGGER ANIMATION */
 section.addEventListener("mouseenter", () => {
   if (animated) return;
   animated = true;
@@ -148,7 +137,6 @@ section.addEventListener("mouseenter", () => {
   startCounters();
 });
 
-/* COUNTER FUNCTION */
 function startCounters() {
   document.querySelectorAll(".stat-value").forEach(el => {
     const target = +el.dataset.target;

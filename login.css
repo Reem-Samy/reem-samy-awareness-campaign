@@ -1,8 +1,44 @@
+:root {
+  /* Fonts */
+  --font-primary: "Inter", sans-serif;
+  --font-secondary: "Arimo", sans-serif;
+
+  /* Colors */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-dark: #101828;
+  --color-gray: #4A5565;
+  --color-light-gray: #94a3b8;
+  --color-border: #e2e8f0;
+  --color-primary: #155DFC;
+  --color-link: #2563eb;
+
+  /* Spacing */
+  --radius-sm: 10px;
+  --radius-md: 12px;
+  --padding-input: 14px;
+
+  /* Font sizes */
+  --fs-h1: 32px;
+  --fs-h2: 24px;
+  --fs-body: 16px;
+  --fs-small: 14px;
+  --fs-xs: 13px;
+
+  /* Line heights */
+  --lh-h1: 36px;
+  --lh-body: 24px;
+
+  /* Layout */
+  --form-width: 380px;
+}
+
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-primary);
 }
 
 body {
@@ -14,7 +50,7 @@ body {
   height: 100vh;
 }
 
-/* LEFT SIDE */
+/* Left Image */
 .login-image {
   flex: 1;
   background: url(imgs/Image\ \(Fitness\ background\).png) center/cover no-repeat;
@@ -25,7 +61,11 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0.75), rgba(0,0,0,0.2));
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.2)
+  );
 }
 
 .overlay {
@@ -33,30 +73,28 @@ body {
   bottom: 290px;
   left: 60px;
   max-width: 420px;
-  color: #fff;
+  color: var(--color-white);
   z-index: 2;
 }
 
 .overlay h1 {
-color: #FFF;
-font-family: "Arimo";
-font-size: 32px;
-font-style: normal;
-font-weight: 400;
-line-height: 36px; /* 150% */
+  color: var(--color-white);
+  font-family: var(--font-secondary);
+  font-size: var(--fs-h1);
+  font-weight: 400;
+  line-height: var(--lh-h1);
   margin-bottom: 12px;
 }
 
 .overlay p {
-color: rgba(255, 255, 255, 0.90);
-font-family: "Arimo";
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 24px; /* 150% */
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-secondary);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: var(--lh-body);
 }
 
-/* RIGHT SIDE */
+/* Right Form */
 .login-form {
   flex: 1;
   display: flex;
@@ -65,52 +103,48 @@ line-height: 24px; /* 150% */
 }
 
 .form-wrapper {
-  width: 380px;
+  width: var(--form-width);
 }
 
 .logo {
-
   margin-bottom: 20px;
 }
 
 h2 {
-    color: #101828;
-font-family: "Arimo";
-font-style: normal;
-font-weight: 400;
-line-height: 30px; 
-  font-size: 24px;
+  color: var(--color-dark);
+  font-family: var(--font-secondary);
+  font-size: var(--fs-h2);
+  font-weight: 400;
+  line-height: 30px;
   margin-bottom: 6px;
 }
 
 .subtitle {
-color: #4A5565;
-font-family: "Arimo";
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 24px;
+  color: var(--color-gray);
+  font-family: var(--font-secondary);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: var(--lh-body);
   margin-bottom: 28px;
 }
 
 label {
-color: #101828;
-font-family: "Arimo";
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 24px; /* 150% */
+  color: var(--color-dark);
+  font-family: var(--font-secondary);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: var(--lh-body);
   margin-bottom: 6px;
   display: block;
 }
 
 input {
   width: 100%;
-  padding: 14px;
-  border-radius: 10px;
-  border: 1px solid #e2e8f0;
+  padding: var(--padding-input);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
   margin-bottom: 18px;
-  font-size: 14px;
+  font-size: var(--fs-small);
 }
 
 .password-field {
@@ -129,23 +163,23 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 13px;
+  font-size: var(--fs-xs);
   margin-bottom: 22px;
 }
 
 .forgot {
-  color: #2563eb;
+  color: var(--color-link);
   text-decoration: none;
 }
 
 .btn-primary {
   display: block;
   width: 100%;
-background: #155DFC;
-  color: #fff;
+  background: var(--color-primary);
+  color: var(--color-white);
   text-align: center;
-  padding: 14px;
-  border-radius: 10px;
+  padding: var(--padding-input);
+  border-radius: var(--radius-sm);
   text-decoration: none;
   font-weight: 400;
   margin-bottom: 20px;
@@ -153,19 +187,19 @@ background: #155DFC;
 
 .signup {
   text-align: center;
-  font-size: 14px;
+  font-size: var(--fs-small);
   margin-bottom: 26px;
 }
 
 .signup a {
-  color: #2563eb;
+  color: var(--color-link);
   text-decoration: none;
 }
 
 .divider {
   text-align: center;
-  font-size: 13px;
-  color: #94a3b8;
+  font-size: var(--fs-xs);
+  color: var(--color-light-gray);
   margin-bottom: 18px;
 }
 
@@ -177,8 +211,9 @@ background: #155DFC;
 .social-login button {
   flex: 1;
   padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #e2e8f0;
-  background: #fff;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: var(--color-white);
   cursor: pointer;
 }
+
